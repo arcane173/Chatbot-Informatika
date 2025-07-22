@@ -1,0 +1,205 @@
+/* === Aurora + Gradient Background === */
+body {
+  background: radial-gradient(ellipse at bottom, #e0f7ff 0%, #ffffff 100%);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.6s ease;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(130deg, rgba(29,140,248,0.4), rgba(0,212,255,0.3), rgba(131,58,180,0.4));
+  animation: aurora 12s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.7;
+  filter: blur(60px);
+}
+
+@keyframes aurora {
+  0%, 100% { transform: translate(0%, 0%) rotate(0deg); }
+  50% { transform: translate(30%, 20%) rotate(30deg); }
+}
+
+/* === Floating Orbs === */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: floatUp 10s linear infinite;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-300px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* === Toggle Theme Button === */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 10;
+  color: #444;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+body.dark .theme-toggle {
+  color: #ffd700;
+}
+
+/* === Login/Register Container === */
+.auth-container {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background 0.4s ease, box-shadow 0.3s ease;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #1d8cf8;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+/* === Form Layout === */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.auth-form input:focus {
+  border-color: #1d8cf8;
+  box-shadow: 0 0 5px rgba(29, 140, 248, 0.3);
+  outline: none;
+}
+
+/* === Button === */
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background: #1d8cf8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.auth-form button:hover {
+  background: #0b65c2;
+}
+
+.auth-container p {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.auth-container a {
+  color: #1d8cf8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* === DARK THEME === */
+body.dark {
+  background: radial-gradient(ellipse at top, #0a0a23 0%, #050509 100%);
+  color: #f0f0f0;
+}
+
+body.dark::before {
+  background: linear-gradient(120deg, rgba(0,255,255,0.15), rgba(0,128,255,0.15), rgba(128,0,255,0.2));
+  opacity: 0.4;
+  filter: blur(80px);
+}
+
+body.dark .auth-container {
+  background: #222;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .auth-container h2 {
+  color: #66b2ff;
+}
+
+body.dark .auth-form input {
+  background: #333;
+  border: 1.5px solid #555;
+  color: white;
+}
+
+body.dark .auth-form input:focus {
+  border-color: #66b2ff;
+  box-shadow: 0 0 5px rgba(102, 178, 255, 0.4);
+}
+
+body.dark .auth-form button {
+  background: #66b2ff;
+}
+
+body.dark .auth-form button:hover {
+  background: #3385cc;
+}
+
+body.dark .auth-container p,
+body.dark .auth-container a {
+  color: #ccc;
+}

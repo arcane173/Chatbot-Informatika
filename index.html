@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHANTIK</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="main.js" defer></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+
+<div class="aurora-bg"></div>
+
+<div class="orb" style="left: 15%; animation-delay: 0s;"></div>
+<div class="orb" style="left: 45%; animation-delay: 3s;"></div>
+<div class="orb" style="left: 75%; animation-delay: 6s;"></div>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+  <span id="theme-icon">🌙</span>
+</button>
+
+<div class="chat-container">
+  <div class="chat-header">
+    <h2>
+      <i class="fas fa-robot"></i> Chantik (Chatbot Informatika)
+      <button class="clear-btn" onclick="clearChat()" style="margin-left: 1rem;" title="Hapus Semua Chat">
+        <i class="fas fa-broom"></i>
+      </button>
+      <button class="logout-btn" onclick="logoutUser()" style="margin-left: 0.75rem;" title="Logout">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </h2>
+  </div>
+
+  <div class="chat-messages" id="message">
+    <button class="scroll-btn" id="scroll-btn" onclick="scrollToBottom()">
+      <i class="fas fa-arrow-down"></i>
+    </button>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="message-input" placeholder="Tanya soal seputar informatika...">
+    <button class="voice-btn" id="voice-btn" onclick="startVoiceRecognition()">
+      <i class="fas fa-microphone"></i>
+    </button>
+    <button class="send-btn" onclick="sendingMessage()">
+      <i class="fas fa-paper-plane"></i>
+    </button>
+  </div>
+</div>
+
+</body>
+</html>
