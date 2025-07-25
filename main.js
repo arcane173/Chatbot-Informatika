@@ -3,7 +3,7 @@ const messageInput = document.getElementById("message-input");
 const voiceBtn = document.getElementById("voice-btn");
 const scrollBtn = document.getElementById("scroll-btn");
 
-const API_KEY = "AIzaSyAPlEQgr9RAwxX2D14_FW2OdA9r9347OSI";
+const API_KEY = "kode api kamu";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 const username = localStorage.getItem("chantik_username");
 
